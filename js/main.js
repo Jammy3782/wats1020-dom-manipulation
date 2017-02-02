@@ -46,7 +46,7 @@ $( document ).ready(function() {
 //event listener on the buttons with the `vote` class.
     $ ('.vote').on('click', function(event){
 //When the button is clicked, look at the `data-vote` attribute to determine  what the user is voting for ("great" or "greatest").
-if($(this).attr('data-vote') === 'great'{
+if($(this).attr('data-vote') === 'great'){		
    voteCounts.great = voteCounts.great + 1;}
 //Increment the counter for whichever vote talley is affected.
 else { voteCounts.greatest = voteCounts.greatest + 1;});
