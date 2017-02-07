@@ -1,4 +1,5 @@
 
+
 $( document ).ready(function() {
     var userInfo = {
         firstName: 'Jane',
@@ -10,18 +11,18 @@ $( document ).ready(function() {
         total: 0
     };
 
-		$ ('# login-form.btn').on('click',  function(event){
+		$('#login-form.btn').on('click',  function(event){
       // hide login
-		$ ('# login-form').hide(300); 
+		$('#login-form').hide(300); 
 	   // Fill the user's first and last name into `div.user-info`.
-    $ ('user-fullname').text(userInfo.firstName +'  '+  userInfo.lastName); 
+    $('.user-fullname').text(userInfo.firstName +'  '+  userInfo.lastName); 
       
     $('user-info').show();
 
   }); 
 
 
-  $ ('.view-details').on('click', function(event){
+  $('.view-details').on('click', function(event){
     console.log(event); 
    var targetElement = event.target; 
    // view details buttion 
@@ -44,12 +45,12 @@ $( document ).ready(function() {
 });
 
 //event listener on the buttons with the `vote` class.
-    $ ('.vote').on('click', function(event){
+    $('.vote').on('click', function(event){
 //When the button is clicked, look at the `data-vote` attribute to determine  what the user is voting for ("great" or "greatest").
 if($(this).attr('data-vote') === 'great'){		
    voteCounts.great = voteCounts.great + 1;}
 //Increment the counter for whichever vote talley is affected.
-else { voteCounts.greatest = voteCounts.greatest + 1;});
+else { voteCounts.greatest = voteCounts.greatest + 1;}  
       voteCounts.total = voteCounts.total + 1;
 var greatPercent = voteCounts.great/voteCounts.total;
 var greatestPercent = voteCounts.greatest/voteCounts.total;
@@ -57,4 +58,3 @@ var greatestPercent = voteCounts.greatest/voteCounts.total;
      $('.great-Progress').css('width', greatPercent + '%');
      $('.greates-Progress').css('width', greatestPercent + '%');     
     });
-
